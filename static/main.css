@@ -1,0 +1,23 @@
+body{
+  background-image:url("background.jpg");
+}
+h1{
+  text-align:center;
+}
+input[type=text]{
+  background-color: #F1F99E;
+  color: black;
+}
+input[type=password]{
+  background-color: #F1F99E;
+  color: black;
+}
+input[type=number]{
+  background-color: #F1F99E;
+  color: black;
+}
+input[type=date]{
+  background-color: #F1F99E;
+  color: black;
+}
+
