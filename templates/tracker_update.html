@@ -1,0 +1,59 @@
+<html>
+  <head>
+    <title>
+      Add Trackers
+    </title>
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <link rel="stylesheet" href="/static/main.css">
+  </head>
+  <body>
+    <center><h3> QuantifiedSelf App</h3></center>
+    <div class="h4 col-15 d-flex justify-content-center">
+            <a href="/home">Home</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <a href="/logout">Logout</a></div>
+    <div class="container mt-14 mb-14 d-flex justify-content-center">
+        <div class="card px-5 py-10">
+        <div class="card-body">
+      
+    <br>
+      
+    <center>{{user.username}}</center>
+    <br>
+    <form action="/home/{{tracker.tracker_id}}/update" class="well form-horizontal" method="post">
+      <center><h4 class="card-title mb-3"><b>Update Tracker</b></h4></center><br>
+      
+      <div class="row">
+                <div class="col-sm-12">
+                    <div class="form-group">
+          <label for="name" class="col-md-10 control-label">Update Tracker name:</label>
+                      <div class="input-group">
+          <input class="form-control" type="text" name="name" value={{tracker.tracker_name}} required></div>
+      </div></div></div>
+
+                      <div class="row">
+                <div class="col-sm-12">
+                    <div class="form-group">
+          <label for="description" class="col-md-10 control-label">Update Tracker Description:</label>
+                      <div class="input-group">
+          <input class="form-control" type="text" name="description" value={{tracker.tracker_description}}></div>
+      </div></div></div>
+
+                      <div class="row">
+                <div class="col-sm-12">
+                    <div class="form-group">
+          <label for="type" class="col-md-10 control-label">Select updated tracker type:</label>
+                      <div class="input-group">
+          <select class="form-select" name="type">
+            <option value="Text" >Text</option>
+            <option value="Number">Number</option>
+            <option value="Time">Time</option>
+          </select></div></div></div></div>
+
+          <center><div class="btn btn-primary">
+          <button class="form-control" type="submit">Update</button></div></center>
+        </form>
+  <!-- JavaScript Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+          </body>
+</html>

@@ -1,0 +1,65 @@
+
+<html>
+  <head>
+    <title>
+      Tracker {{tracker.tracker_id}}
+    </title>
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <link rel="stylesheet" href="/static/main.css">
+    <style>
+        h1 {
+            color: green;
+            text-align: center;
+        }
+        div {
+            margin-top: 10px;
+        }
+    </style>
+  </head>
+  <body>
+      <br>
+      <div class="container">
+     <h4>Tracker - {{tracker.tracker_name}}</h4>
+     <table class="table table-dark">
+      <thead>
+        <tr>
+          <th scope="col">
+            Index
+          </th>
+          <th scope="col">
+            Log
+          </th>
+          <th scope="col">
+            Description
+          </th>
+          <th scope="col">
+            Settings
+          </th>
+          <th scope="col">
+            Date and Time of Log
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+          {% for tl in tracker.logs %}
+          <tr>
+            <td scope="row">{{loop.index}}</td>
+            <td>{{tl.log}}</td>
+            <td>{{tl.log_description}}</td>
+            <td>
+              <button type="button" value="edit"><a href="/log/{{tl.log_id}}/update">Update</a></button>
+              <button type="button" value="delete"><a href="/log/{{tl.log_id}}/delete">Delete</a></button>
+            </td>
+            <td>{{tl.date_time.strftime('(%d/%b/%Y, %H:%M:%S)')}}</td>
+          </tr>
+          {% endfor %}
+      </tbody>
+    </table>
+    <button type="button"><a  href="/home/{{tracker.tracker_id}}/log">Add Log</a></button>
+      </div>
+        
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+  </body>
+</html>
